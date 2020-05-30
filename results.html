@@ -14,38 +14,38 @@
 </script>
 
 <body>
-<h1>8values</h1>
+<h1>8thoughts</h1>
 <hr>
 
 <h1>Results</h1>
 
-<h2>Economic Axis: <span class="weight-300" id="economic-label"></span></h2>
+<h2>Belief Axis: <span class="weight-300" id="economic-label"></span></h2>
 <div class="axis">
-    <img id="img-equality" src="value_images/equality.svg" height="128pt"/>
-    <div class="bar equality" id="bar-equality"><div class="text-wrapper" id="equality"></div></div>
-    <div class="bar wealth" id="bar-wealth"><div class="text-wrapper" id="wealth"></div></div>
-    <img id="img-wealth" src="value_images/wealth.svg" height="128pt"/>
+    <img id="img-skeptic" src="value_images/skeptic.svg" height="128pt"/>
+    <div class="bar skeptic" id="bar-skeptic"><div class="text-wrapper" id="skeptic"></div></div>
+    <div class="bar idealist" id="bar-idealist"><div class="text-wrapper" id="idealist"></div></div>
+    <img id="img-idealist" src="value_images/idealist.svg" height="128pt"/>
 </div>
-<h2>Diplomatic Axis: <span class="weight-300" id="diplomatic-label"></span></h2>
+<h2>Appliance Axis: <span class="weight-300" id="diplomatic-label"></span></h2>
 <div class="axis">
-    <img id="img-might" src="value_images/might.svg" height="128pt"/>
-    <div class="bar might" id="bar-might"><div class="text-wrapper" id="might"></div></div>
-    <div class="bar peace" id="bar-peace"><div class="text-wrapper" id="peace"></div></div>
-    <img id="img-peace" src="value_images/peace.svg" height="128pt"/>
+    <img id="img-relative" src="value_images/relative.svg" height="128pt"/>
+    <div class="bar relative" id="bar-relative"><div class="text-wrapper" id="relative"></div></div>
+    <div class="bar universal" id="bar-universal"><div class="text-wrapper" id="universal"></div></div>
+    <img id="img-universal" src="value_images/universal.svg" height="128pt"/>
 </div>
-<h2>Civil Axis: <span class="weight-300" id="state-label"></span></h2>
+<h2>Perspective Axis: <span class="weight-300" id="state-label"></span></h2>
 <div class="axis">
-    <img id="img-liberty" src="value_images/liberty.svg" height="128pt"/>
-    <div class="bar liberty" id="bar-liberty"><div class="text-wrapper" id="liberty"></div></div>
-    <div class="bar authority" id="bar-authority"><div class="text-wrapper" id="authority"></div></div>
-    <img id="img-authority" src="value_images/authority.svg" height="128pt"/>
+    <img id="img-subjective" src="value_images/subjective.svg" height="128pt"/>
+    <div class="bar subjective" id="bar-subjective"><div class="text-wrapper" id="subjective"></div></div>
+    <div class="bar objective" id="bar-objective"><div class="text-wrapper" id="objective"></div></div>
+    <img id="img-objective" src="value_images/objective.svg" height="128pt"/>
 </div>
-<h2>Societal Axis: <span class="weight-300" id="society-label"></span></h2>
+<h2>Approach Axis: <span class="weight-300" id="society-label"></span></h2>
 <div class="axis">
-    <img id="img-tradition" src="value_images/tradition.svg" height="128pt"/>
-    <div class="bar tradition" id="bar-tradition"><div class="text-wrapper" id="tradition"></div></div>
-    <div class="bar progress" id="bar-progress"><div class="text-wrapper" id="progress"></div></div>
-    <img id="img-progress" src="value_images/progress.svg" height="128pt"/>
+    <img id="img-pessimist" src="value_images/pessimist.svg" height="128pt"/>
+    <div class="bar pessimist" id="bar-pessimist"><div class="text-wrapper" id="pessimist"></div></div>
+    <div class="bar optimist" id="bar-optimist"><div class="text-wrapper" id="optimist"></div></div>
+    <img id="img-optimist" src="value_images/optimist.svg" height="128pt"/>
 </div>
 <h2>Closest Match: <span class="weight-300" id="ideology-label"></span></h2>
 <p>Ideological matching is a work in progress, and is much less accurate than the values and axes.</p>
@@ -92,9 +92,9 @@ stats"></a></div></noscript>
     }
 
     econArray = ["Communist","Socialist","Social","Centrist","Market","Capitalist","Laissez-Faire"]
-    diplArray = ["Cosmopolitan","Internationalist","Peaceful","Balanced","Patriotic","Nationalist","Chauvinist"]
+    diplArray = ["Cosmopolitan","Internationalist","universalful","Balanced","Patriotic","Nationalist","Chauvinist"]
     govtArray = ["Anarchist","Libertarian","Liberal","Moderate","Statist","Authoritarian","Totalitarian"]
-    sctyArray = ["Revolutionary","Very Progressive","Progressive","Neutral","Traditional","Very Traditional","Reactionary"]
+    sctyArray = ["Revolutionary","Very optimistive","optimistive","Neutral","pessimistal","Very pessimistal","Reactionary"]
 
     function setLabel(val,ary) {
         if (val > 100) { return "" } else
@@ -108,37 +108,37 @@ stats"></a></div></noscript>
         	{return ""}
     }
 
-    equality  = getQueryVariable("e")
-    peace     = getQueryVariable("d")
-    liberty   = getQueryVariable("g")
-    progress  = getQueryVariable("s")
-    wealth    = (100 - equality).toFixed(1)
-    might     = (100 - peace   ).toFixed(1)
-    authority = (100 - liberty ).toFixed(1)
-    tradition = (100 - progress).toFixed(1)
+    skeptic  = getQueryVariable("e")
+    universal     = getQueryVariable("d")
+    subjective   = getQueryVariable("g")
+    optimist  = getQueryVariable("s")
+    idealist    = (100 - skeptic).toFixed(1)
+    relative     = (100 - universal   ).toFixed(1)
+    objective = (100 - subjective ).toFixed(1)
+    pessimist = (100 - optimist).toFixed(1)
 
-    setBarValue("equality", equality)
-    setBarValue("wealth", wealth)
-    setBarValue("peace", peace)
-    setBarValue("might", might)
-    setBarValue("liberty", liberty)
-    setBarValue("authority", authority)
-    setBarValue("progress", progress)
-    setBarValue("tradition", tradition)
+    setBarValue("skeptic", skeptic)
+    setBarValue("idealist", idealist)
+    setBarValue("universal", universal)
+    setBarValue("relative", relative)
+    setBarValue("subjective", subjective)
+    setBarValue("objective", objective)
+    setBarValue("optimist", optimist)
+    setBarValue("pessimist", pessimist)
 
-    document.getElementById("economic-label").innerHTML = setLabel(equality, econArray)
-    document.getElementById("diplomatic-label").innerHTML = setLabel(peace, diplArray)
-    document.getElementById("state-label").innerHTML = setLabel(liberty, govtArray)
-    document.getElementById("society-label").innerHTML = setLabel(progress, sctyArray)
+    document.getElementById("economic-label").innerHTML = setLabel(skeptic, econArray)
+    document.getElementById("diplomatic-label").innerHTML = setLabel(universal, diplArray)
+    document.getElementById("state-label").innerHTML = setLabel(subjective, govtArray)
+    document.getElementById("society-label").innerHTML = setLabel(optimist, sctyArray)
 
     ideology = ""
     ideodist = Infinity
     for (var i = 0; i < ideologies.length; i++) {
         dist = 0
-        dist += Math.pow(Math.abs(ideologies[i].stats.econ - equality), 2)
-        dist += Math.pow(Math.abs(ideologies[i].stats.govt - liberty), 2)
-        dist += Math.pow(Math.abs(ideologies[i].stats.dipl - peace), 1.73856063)
-        dist += Math.pow(Math.abs(ideologies[i].stats.scty - progress), 1.73856063)
+        dist += Math.pow(Math.abs(ideologies[i].stats.econ - skeptic), 2)
+        dist += Math.pow(Math.abs(ideologies[i].stats.govt - subjective), 2)
+        dist += Math.pow(Math.abs(ideologies[i].stats.dipl - universal), 1.73856063)
+        dist += Math.pow(Math.abs(ideologies[i].stats.scty - optimist), 1.73856063)
         if (dist < ideodist) {
             ideology = ideologies[i].name
             ideodist = dist
@@ -162,21 +162,21 @@ stats"></a></div></noscript>
         ctx.fillStyle = "#EEEEEE"
         ctx.fillRect(0,0,800,650);
 
-        img = document.getElementById("img-equality")
+        img = document.getElementById("img-skeptic")
         ctx.drawImage(img, 20, 170, 100, 100);
-        img = document.getElementById("img-wealth")
+        img = document.getElementById("img-idealist")
         ctx.drawImage(img, 680, 170, 100, 100)
-        img = document.getElementById("img-might")
+        img = document.getElementById("img-relative")
         ctx.drawImage(img, 20, 290, 100, 100)
-        img = document.getElementById("img-peace")
+        img = document.getElementById("img-universal")
         ctx.drawImage(img, 680, 290, 100, 100)
-        img = document.getElementById("img-liberty")
+        img = document.getElementById("img-subjective")
         ctx.drawImage(img, 20, 410, 100, 100)
-        img = document.getElementById("img-authority")
+        img = document.getElementById("img-objective")
         ctx.drawImage(img, 680, 410, 100, 100)
-        img = document.getElementById("img-tradition")
+        img = document.getElementById("img-pessimist")
         ctx.drawImage(img, 20, 530, 100, 100)
-        img = document.getElementById("img-progress")
+        img = document.getElementById("img-optimist")
         ctx.drawImage(img, 680, 530, 100, 100)
 
         ctx.fillStyle="#222222"
@@ -185,21 +185,21 @@ stats"></a></div></noscript>
         ctx.fillRect(120, 420, 560, 80)
         ctx.fillRect(120, 540, 560, 80)
         ctx.fillStyle="#f44336"
-        ctx.fillRect(120, 184, 5.6*equality-2, 72)
+        ctx.fillRect(120, 184, 5.6*skeptic-2, 72)
         ctx.fillStyle="#00897b"
-        ctx.fillRect(682-5.6*wealth, 184, 5.6*wealth-2, 72)
+        ctx.fillRect(682-5.6*idealist, 184, 5.6*idealist-2, 72)
         ctx.fillStyle="#ff9800"
-        ctx.fillRect(120, 304, 5.6*might-2, 72)
+        ctx.fillRect(120, 304, 5.6*relative-2, 72)
         ctx.fillStyle="#03a9f4"
-        ctx.fillRect(682-5.6*peace, 304, 5.6*peace-2, 72)
+        ctx.fillRect(682-5.6*universal, 304, 5.6*universal-2, 72)
         ctx.fillStyle="#ffeb3b"
-        ctx.fillRect(120, 424, 5.6*liberty-2, 72)
+        ctx.fillRect(120, 424, 5.6*subjective-2, 72)
         ctx.fillStyle="#3f51b5"
-        ctx.fillRect(682-5.6*authority, 424, 5.6*authority-2, 72)
+        ctx.fillRect(682-5.6*objective, 424, 5.6*objective-2, 72)
         ctx.fillStyle="#8bc34a"
-        ctx.fillRect(120, 544, 5.6*tradition-2, 72)
+        ctx.fillRect(120, 544, 5.6*pessimist-2, 72)
         ctx.fillStyle="#9c27b0"
-        ctx.fillRect(682-5.6*progress, 544, 5.6*progress-2, 72)
+        ctx.fillRect(682-5.6*optimist, 544, 5.6*optimist-2, 72)
         ctx.fillStyle="#222222"
         ctx.font="700 80px Montserrat"
         ctx.textAlign="left"
@@ -208,15 +208,15 @@ stats"></a></div></noscript>
         ctx.fillText(ideology, 20, 140)
 
         ctx.textAlign="left"
-        if (equality  > 30) {ctx.fillText(equality + "%", 130, 237.5)}
-        if (might     > 30) {ctx.fillText(might + "%", 130, 357.5)}
-        if (liberty   > 30) {ctx.fillText(liberty + "%", 130, 477.5)}
-        if (tradition > 30) {ctx.fillText(tradition + "%", 130, 597.5)}
+        if (skeptic  > 30) {ctx.fillText(skeptic + "%", 130, 237.5)}
+        if (relative     > 30) {ctx.fillText(relative + "%", 130, 357.5)}
+        if (subjective   > 30) {ctx.fillText(subjective + "%", 130, 477.5)}
+        if (pessimist > 30) {ctx.fillText(pessimist + "%", 130, 597.5)}
         ctx.textAlign="right"
-        if (wealth    > 30) {ctx.fillText(wealth + "%", 670, 237.5)}
-        if (peace     > 30) {ctx.fillText(peace + "%", 670, 357.5)}
-        if (authority > 30) {ctx.fillText(authority + "%", 670, 477.5)}
-        if (progress  > 30) {ctx.fillText(progress + "%", 670, 597.5)}
+        if (idealist    > 30) {ctx.fillText(idealist + "%", 670, 237.5)}
+        if (universal     > 30) {ctx.fillText(universal + "%", 670, 357.5)}
+        if (objective > 30) {ctx.fillText(objective + "%", 670, 477.5)}
+        if (optimist  > 30) {ctx.fillText(optimist + "%", 670, 597.5)}
 
         ctx.font="300 30px Montserrat"
         ctx.fillText("8values.github.io", 780, 60)
